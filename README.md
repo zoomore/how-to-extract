@@ -238,3 +238,34 @@ Related product is different than up sale so we extract them in different variab
 ### the result:
 ![alt chrome-inspect-console](./img/File43.png)
 
+Just as an example, you do not have to have that many attributes depending of your usecase
+```
+	site: www.babybunting.com.au	
+		
+title	//div[@class="product-view"]//h1/text()	
+prices	//div[@class="product-view"]//div[@class="price-info"]//span[contains(text(), "$")]/text()	
+main_image	//img[@id="image-main"]/@src	
+other_images	//ul[@class="product-image-thumbs"]//img/@src	
+brand_name	//div[@class="product-view"]//div[@class="pull-right"]//p[contains(@class, "brands-image")]//img/@title	
+brand_image	//div[@class="product-view"]//div[@class="pull-right"]//p[contains(@class, "brands-image")]//img/@src	
+short_description	//div[contains(@class, "short-description")]//text()	FIRST
+suitable_for	//div[contains(@class, "suitable-for")]//text()	1, 2
+features	//*[@id="collateral-tabs"]//h2[contains(text(), "Features")]/following-sibling::*//text()	
+details	//*[@id="collateral-tabs"]//h2[contains(text(), "Details")]/following-sibling::*//text()	
+specifications	//*[@id="collateral-tabs"]//h2[contains(text(), "Specifications")]/following-sibling::*//text()	
+additional_info	//*[@id="collateral-tabs"]//h2[contains(text(), "Additional Info")]/following-sibling::*//text()	
+reviews	//*[@id="collateral-tabs"]//h2[contains(text(), "Reviews")]/following-sibling::*//text()	
+up_sell_array_links	//div[contains(@class, "box-up-sell")]//div[contains(@class, "item") and not(contains(@class, "multiple-item"))]//div[@class="product-name"]/a	
+up_sell_array_titles	//div[contains(@class, "box-up-sell")]//div[contains(@class, "item") and not(contains(@class, "multiple-item"))]//div[@class="product-name"]/a/text()	
+up_sell_array_images	//div[contains(@class, "box-up-sell")]//div[contains(@class, "item") and not(contains(@class, "multiple-item"))]//div[@class="product-image-contents"]//img/@src	
+up_sell_array_prices	//div[contains(@class, "box-up-sell")]//div[contains(@class, "item") and not(contains(@class, "multiple-item"))]//span[contains(text(), "$")]/text()	
+up_sell_array_brand_names	//div[contains(@class, "box-up-sell")]//div[contains(@class, "item") and not(contains(@class, "multiple-item"))]//p[contains(@class, "brands-image")]//img/@title	
+up_sell_array_brand_images	//div[contains(@class, "box-up-sell")]//div[contains(@class, "item") and not(contains(@class, "multiple-item"))]//p[contains(@class, "brands-image")]//img/@src	
+related_array_links	//div[contains(@class, "block-related")]//div[contains(@class, "item") and not(contains(@class, "multiple-item"))]//div[@class="product-name"]/a	
+related_array_titles	//div[contains(@class, "block-related")]//div[contains(@class, "item") and not(contains(@class, "multiple-item"))]//div[@class="product-name"]/a/text()	
+related_array_images	//div[contains(@class, "block-related")]//div[contains(@class, "item") and not(contains(@class, "multiple-item"))]//div[@class="product-image-contents"]//img/@src	
+related_array_prices	//div[contains(@class, "block-related")]//div[contains(@class, "item") and not(contains(@class, "multiple-item"))]//span[contains(text(), "$")]/text()	
+related_array_brand_names	//div[contains(@class, "block-related")]//div[contains(@class, "item") and not(contains(@class, "multiple-item"))]//p[contains(@class, "brands-image")]//img/@title	
+related_array_brand_images	//div[contains(@class, "block-related")]//div[contains(@class, "item") and not(contains(@class, "multiple-item"))]//p[contains(@class, "brands-image")]//img/@src	
+breadcrumbs	//*[contains(@class, "breadcrumbs")]//text()	
+```
