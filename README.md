@@ -13,6 +13,10 @@ what we want is a spreadsheet with the name of the website on top.
 First column will be the name of the extracted information (eg. title, decription, prices)
 Second column will be the position of the element using Xpath
 
+THIS IS A COMPLEX EXAMPLE. 
+YOU DO NOT HAVE TO HAVE THAT MANY ATTRIBUTES.
+THERE IS NO SPECIFICATION REGARDING THE NAME YOU CHOOSE FOR THE ATTRIBUTES (whatever make sense to you)
+
 For instance this spreadsheet
 ![alt chrome-inspect-console](./img/File43.png)
 
